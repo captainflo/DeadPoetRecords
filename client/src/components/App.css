@@ -1,5 +1,18 @@
 body {
   font-family: 'Montserrat', sans-serif;
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #fff;
 }
 
 /* Navbar */
@@ -17,7 +30,17 @@ nav {
 /* Footer */
 .page-footer {
   border-top: 1px solid #fff;
-  background: black !important; /* fallback for old browsers */
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* Signin & Signup */
@@ -32,9 +55,14 @@ nav {
 }
 .btn-signin {
   width: 45%;
+  background-color: #630503 !important;
 }
 .input-field .prefix.active {
-  color: #1488cc !important;
+  color: #630503 !important;
+}
+
+.link-auth {
+  color: #fff;
 }
 
 /* UserShow */
@@ -51,8 +79,8 @@ input[type='text']:not(.browser-default).validate + label,
 input.valid[type='text']:not(.browser-default),
 input[type='text']:not(.browser-default):focus:not([readonly]),
 input[type='tel']:not(.browser-default):focus:not([readonly]) {
-  border-bottom: 1px solid #1488cc !important;
-  box-shadow: 0 1px 0 0 #1488cc !important;
+  border-bottom: 1px solid #630503 !important;
+  box-shadow: 0 1px 0 0 #630503 !important;
 }
 
 .top-left {

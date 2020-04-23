@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 class Signup extends React.Component {
   render() {
-    const submit = form => {
-      this.props.signup(form, id =>
+    const submit = (form) => {
+      this.props.signup(form, (id) =>
         this.props.history.push(`/dashboard/${id}`)
       );
     };
@@ -18,7 +18,7 @@ class Signup extends React.Component {
     const { error, handleSubmit, submitting } = this.props;
     return (
       <div className="container">
-        <h4 className="center white-text">
+        <h4 className="center">
           Sign Up <i className="fas fa-user-plus" />
         </h4>
         <div className="row">
@@ -77,7 +77,7 @@ class Signup extends React.Component {
               </button>
             </div>
           </form>
-          <div className="center white-text">
+          <div className="center">
             <p>Or</p>
             <p>Sign up with</p>
             <ul>
@@ -89,16 +89,10 @@ class Signup extends React.Component {
                   <i className="fab fa-google"></i>Google
                 </a>
               </li>
-              <li style={{ listStyle: 'none', paddingBottom: '10px' }}>
-                <a
-                  href="/auth/linkedin"
-                  className="waves-effect waves-light btn social linkedin"
-                >
-                  <i className="fab fa-linkedin"></i>Linkedin
-                </a>
-              </li>
             </ul>
-            <Link to="/signin">You have a Account? Sign In!</Link>
+            <Link className="link-auth" to="/signin">
+              You have a Account? Sign In!
+            </Link>
             <br></br>
             <br></br>
           </div>
@@ -110,7 +104,7 @@ class Signup extends React.Component {
 
 function mapStateToPros(state) {
   return {
-    errorMessage: state.auth.errorSignup
+    errorMessage: state.auth.errorSignup,
   };
 }
 

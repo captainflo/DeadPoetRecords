@@ -1,12 +1,14 @@
 import React from 'react';
-import Header from './utils/Header';
 import { BrowserRouter, Route } from 'react-router-dom';
 import * as actions from './actions';
 import { connect } from 'react-redux';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './App.css';
 
+import Header from './utils/Header';
 import Welcome from './pages/Welcome';
+import Footer from './utils/Footer';
+
 import Signout from './auth/Signout';
 import Signin from './auth/Signin';
 import Signup from './auth/Signup';
@@ -30,7 +32,6 @@ class App extends React.Component {
           <Route exact path="/signout" component={Signout} />
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/game/:id" component={Game} />
 
           {this.props.authenticated ? (
             <div>
@@ -40,6 +41,7 @@ class App extends React.Component {
           ) : (
             ''
           )}
+          <Footer />
         </BrowserRouter>
       </div>
     );

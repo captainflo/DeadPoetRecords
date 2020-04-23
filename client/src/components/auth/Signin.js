@@ -8,14 +8,16 @@ import renderField from './renderField';
 import { Link } from 'react-router-dom';
 
 class Signin extends React.Component {
-  submit = form => {
-    this.props.signin(form, id => this.props.history.push(`/dashboard/${id}`));
+  submit = (form) => {
+    this.props.signin(form, (id) =>
+      this.props.history.push(`/dashboard/${id}`)
+    );
   };
   render() {
     const { error, handleSubmit, submitting } = this.props;
     return (
       <div className="container">
-        <h4 className="center white-text">
+        <h4 className="center">
           Sign in <i className="fas fa-user-alt"></i>
         </h4>
         <div className="row">
@@ -61,7 +63,7 @@ class Signin extends React.Component {
               </button>
             </div>
           </form>
-          <div className="center white-text">
+          <div className="center">
             <p>Or</p>
             <p>Sign in with</p>
             <ul>
@@ -73,16 +75,10 @@ class Signin extends React.Component {
                   <i className="fab fa-google"></i>Google
                 </a>
               </li>
-              <li style={{ listStyle: 'none', paddingBottom: '10px' }}>
-                <a
-                  href="/auth/linkedin"
-                  className="waves-effect waves-light btn social linkedin"
-                >
-                  <i className="fab fa-linkedin"></i>Linkedin
-                </a>
-              </li>
             </ul>
-            <Link to="/signup">You don't have a Account? Sign up!</Link>
+            <Link className="link-auth" to="/signup">
+              You don't have a Account? Sign up!
+            </Link>
             <br></br>
             <br></br>
           </div>
@@ -94,7 +90,7 @@ class Signin extends React.Component {
 
 function mapStateToPros(state) {
   return {
-    errorMessage: state.auth.errorMessage
+    errorMessage: state.auth.errorMessage,
   };
 }
 

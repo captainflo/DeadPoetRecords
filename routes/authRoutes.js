@@ -4,7 +4,7 @@ const passport = require('passport');
 const requireAuth = passport.authenticate('jwt', { session: true });
 const requireSignin = passport.authenticate('local', { session: false });
 
-module.exports = app => {
+module.exports = (app) => {
   // Signup by Email with JWT
   app.post('/signup', Authentication.signup);
   // Signin by Email with JWT
@@ -20,29 +20,13 @@ module.exports = app => {
   app.get(
     '/auth/google',
     passport.authenticate('google', {
-      scope: ['profile', 'email']
+      scope: ['profile', 'email'],
     })
   );
   app.get(
     '/auth/google/callback',
     passport.authenticate('google'),
     (req, res) => {
-      res.redirect('/');
-    }
-  );
-
-  // Linkedin
-  app.get(
-    '/auth/linkedin',
-    passport.authenticate('linkedin', {
-      scope: ['r_liteprofile', 'r_emailaddress', 'w_member_social']
-    })
-  );
-  app.get(
-    '/auth/linkedin/callback',
-    passport.authenticate('linkedin', { failureRedirect: '/' }),
-    function(req, res) {
-      // Successful authentication, redirect home.
       res.redirect('/');
     }
   );

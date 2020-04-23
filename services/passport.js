@@ -11,7 +11,7 @@ const localStrategy = require('passport-local');
 
 // Create local strategy
 const localOptions = { usernameField: 'email' };
-const localLogin = new localStrategy(localOptions, function(
+const localLogin = new localStrategy(localOptions, function (
   email,
   password,
   done
@@ -19,7 +19,7 @@ const localLogin = new localStrategy(localOptions, function(
   // verify this username and password, call done with the user
   // if it is the correct username and password
   // otherwise, call done with false
-  User.findOne({ email: email }, function(err, user) {
+  User.findOne({ email: email }, function (err, user) {
     if (err) {
       return done(err);
     }
@@ -27,7 +27,7 @@ const localLogin = new localStrategy(localOptions, function(
       return done(null, false);
     }
     // compare passwords - is password is equal to user.password?
-    user.comparePassword(password, function(err, isMatch) {
+    user.comparePassword(password, function (err, isMatch) {
       if (err) {
         return done(err);
       }
@@ -43,15 +43,15 @@ const localLogin = new localStrategy(localOptions, function(
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
   secretOrKey: keys.secret,
-  passReqToCallback: true
+  passReqToCallback: true,
 };
 
 // Create Jwt strategy
-const jwtLogin = new JwtStrategy(jwtOptions, function(req, payload, done) {
+const jwtLogin = new JwtStrategy(jwtOptions, function (req, payload, done) {
   // See if the user Id in the payload exists in our database
   // If does, call 'done' with that other
   // otherwise, call done without a user object
-  User.findById(payload.sub, function(err, user) {
+  User.findById(payload.sub, function (err, user) {
     if (err) {
       return done(err, false);
     }
@@ -74,7 +74,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  User.findById(id).then(user => {
+  User.findById(id).then((user) => {
     user.whatever = 'you like';
     done(null, user);
   });
@@ -87,7 +87,7 @@ passport.use(
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
       callbackURL: '/auth/google/callback',
-      proxy: true
+      proxy: true,
     },
     async (accessToken, refreshToken, profile, done) => {
       console.log('access Token', accessToken);
@@ -106,40 +106,7 @@ passport.use(
           email: profile._json.email,
           avatar: profile._json.picture,
           firstName: profile._json.given_name,
-          lastName: profile._json.family_name
-        }).save();
-        done(null, user);
-      }
-    }
-  )
-);
-// Linkedin Auth
-passport.use(
-  new LinkedInStrategy(
-    {
-      clientID: keys.linkedinClientID,
-      clientSecret: keys.linkedinClientSecret,
-      callbackURL: '/auth/linkedin/callback',
-      scope: ['r_liteprofile', 'r_emailaddress', 'w_member_social'],
-      proxy: true
-    },
-    async (accessToken, refreshToken, profile, done) => {
-      console.log('access token', accessToken);
-      console.log('refresh token', refreshToken);
-      console.log('profile:', profile);
-      // don't have double User with same profileID
-      const existingUser = await User.findOne({ linkedinId: profile.id });
-      if (existingUser) {
-        // We already have record with given profile ID
-        done(null, existingUser);
-      } else {
-        // We don't have a user with this ID, make a new record
-        const user = await new User({
-          linkedinId: profile.id,
-          firstName: profile.name.givenName,
-          lastName: profile.name.familyName,
-          email: profile.emails[0].value,
-          avatar: profile.photos[1].value
+          lastName: profile._json.family_name,
         }).save();
         done(null, user);
       }
