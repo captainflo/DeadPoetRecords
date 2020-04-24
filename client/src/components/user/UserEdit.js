@@ -10,7 +10,8 @@ import normalizePhone from './normalizePhone';
 
 class UserEdit extends React.Component {
   state = {
-    image: ''
+    image: '',
+    publicId: '',
   };
   onDelete = () => {
     const id = this.props.auth._id;
@@ -19,16 +20,40 @@ class UserEdit extends React.Component {
     });
   };
 
-  deletePhoto = () => {
+  deletePhoto = async () => {
+    const image = {
+      img: this.state.publicId,
+    };
+    const sound = {
+      audio: this.state.publicId,
+    };
+
+    this.props.deleteImage(image);
+    this.props.deleteAudio(sound);
     this.setState({ image: '' });
   };
 
   uploadWidget = () => {
     window.cloudinary.openUploadWidget(
-      { cloud_name: 'dwtc6zep7', upload_preset: 'xglbitak', tags: ['xmas'] },
+      { cloud_name: 'dxeiiwxha', upload_preset: 'xseslubx', tags: ['xmas'] },
       (error, result) => {
         if (result) {
+          console.log(result[0]);
           this.setState({ image: result[0].url });
+          this.setState({ publicId: result[0].public_id });
+        }
+      }
+    );
+  };
+
+  uploadWidgetAudio = () => {
+    window.cloudinary.openUploadWidget(
+      { cloud_name: 'dxeiiwxha', upload_preset: 'mqdda5jq', tags: ['m4a'] },
+      (error, result) => {
+        if (result) {
+          console.log(result[0]);
+          this.setState({ image: result[0].url });
+          this.setState({ publicId: result[0].public_id });
         }
       }
     );
@@ -37,7 +62,7 @@ class UserEdit extends React.Component {
   render() {
     const { error, handleSubmit, submitting } = this.props;
 
-    const onSubmit = formProps => {
+    const onSubmit = (formProps) => {
       const id = this.props.auth._id;
 
       const form = {
@@ -45,7 +70,7 @@ class UserEdit extends React.Component {
         lastName: formProps.lastName,
         description: formProps.description,
         phone: formProps.phone,
-        avatar: this.state.image || this.props.auth.avatar
+        avatar: this.state.image || this.props.auth.avatar,
       };
 
       this.props.editUser(id, form, () => {
@@ -120,6 +145,13 @@ class UserEdit extends React.Component {
                 <i className="fas fa-camera"></i>
               </p>
 
+              <p
+                onClick={this.uploadWidgetAudio.bind(this)}
+                className="upload-button"
+              >
+                <i className="fas fa-headphones-alt"></i>
+              </p>
+
               {this.state.image ? (
                 <div>
                   <div className="delete-picture" onClick={this.deletePhoto}>
@@ -155,7 +187,7 @@ class UserEdit extends React.Component {
 
 function mapStateToPros(state) {
   return {
-    auth: state.auth.authenticated
+    auth: state.auth.authenticated,
   };
 }
 

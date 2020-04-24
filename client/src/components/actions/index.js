@@ -108,3 +108,13 @@ export const deleteUser = (id, callback) => async (dispatch) => {
   localStorage.removeItem('token');
   callback(); /* history callback */
 };
+
+// Cloudinary Delete Image
+export const deleteImage = (image) => async () => {
+  await axios.post(`/api/delete/image`, image);
+};
+
+// Cloudinary Delete Audio
+export const deleteAudio = (audio) => async () => {
+  await axios.post(`/api/delete/audio`, audio);
+};
