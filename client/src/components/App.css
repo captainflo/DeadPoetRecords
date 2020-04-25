@@ -20,6 +20,16 @@ nav {
   background-color: transparent !important;
 }
 
+.logo-img {
+  width: 60px;
+  height: auto;
+  margin-bottom: -12px;
+}
+
+.title-logo {
+  font-size: 18px;
+}
+
 .avatar {
   vertical-align: middle;
   width: 50px;

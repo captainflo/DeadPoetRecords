@@ -40,11 +40,16 @@ class Header extends React.Component {
         <nav>
           <div className="nav-wrapper">
             <Link className="brand-logo" to="/">
-              <i
-                style={{ paddingLeft: '25px' }}
-                className="fas fa-headphones-alt"
-              ></i>{' '}
-              <span className="title-logo">Dead Poet Records</span>
+              <span className="title-logo">
+                <img
+                  className="logo-img"
+                  src={
+                    process.env.PUBLIC_URL + '/images/DeadPoetRecords-logo.png'
+                  }
+                  alt="logo"
+                />
+                Dead Poet Records
+              </span>
             </Link>
             <a href="#/" data-target="slide-out" className="sidenav-trigger">
               <i className="material-icons">menu</i>
