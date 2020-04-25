@@ -2,38 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../css/Music.css';
+import SoundBar from '../utils/SoundBar';
 
-const audio = new Audio(
-  'https://res.cloudinary.com/dxeiiwxha/video/upload/v1587734345/audio/kzeffgwliqlcgmil26eg.m4a'
-);
-
-const time = audio.duration;
-
-class Music extends React.Component {
+class MusicList extends React.Component {
   state = {
     image: '',
     publicId: '',
-    Sound: '',
   };
 
-  playAudio = () => {
-    audio.play();
-  };
-
-  pauseAudio = () => {
-    audio.pause();
-  };
-
-  stopAudio = () => {
-    audio.pause();
-    audio.currentTime = 0;
-  };
-
-  durationAudio = () => {
-    console.log(audio.duration);
-  };
-
-  deletePhoto = async () => {
+  deleteSound = async () => {
     const sound = {
       audio: this.state.publicId,
     };
@@ -55,7 +32,7 @@ class Music extends React.Component {
     );
   };
 
-  downloadAudio = () => {
+  uploadAudio = () => {
     return (
       <div>
         <p
@@ -69,21 +46,10 @@ class Music extends React.Component {
   };
 
   render() {
-    console.log(time);
     return (
       <div>
-        <div className="box-play" onClick={this.playAudio}>
-          <i className="far fa-play-circle"></i>
-        </div>
-        <div className="box-play" onClick={this.pauseAudio}>
-          <i className="far fa-pause-circle"></i>
-        </div>
-        <div className="box-play" onClick={this.stopAudio}>
-          <i className="far fa-stop-circle"></i>
-        </div>
-        <div onClick={this.durationAudio}>here</div>
-
-        {this.downloadAudio()}
+        <SoundBar />
+        {this.uploadAudio()}
         <a
           href={`https://res.cloudinary.com/dxeiiwxha/video/upload/fl_attachment/v1587734345/audio/kzeffgwliqlcgmil26eg`}
         >
@@ -97,7 +63,7 @@ class Music extends React.Component {
 
         {this.state.image ? (
           <div>
-            <div className="delete-picture" onClick={this.deletePhoto}>
+            <div className="delete-picture" onClick={this.deleteSound}>
               <i className="far fa-times-circle"></i>
             </div>
             <img className="photo-show" src={this.state.image} alt="avatar" />
@@ -110,4 +76,4 @@ class Music extends React.Component {
   }
 }
 
-export default connect(null, actions)(Music);
+export default connect(null, actions)(MusicList);
