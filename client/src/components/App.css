@@ -37,6 +37,11 @@ nav {
   border-radius: 50%;
 }
 
+/* SideBar */
+.sidebar-background {
+  width: 320px;
+}
+
 /* Footer */
 .page-footer {
   border-top: 1px solid #fff;
