@@ -52,7 +52,9 @@ class Music extends React.Component {
     });
   };
 
-  stopAudio = () => {};
+  stopAudio = () => {
+    console.log('hello');
+  };
 
   render() {
     return (
