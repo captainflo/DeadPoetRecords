@@ -3,7 +3,14 @@ import '../css/Welcome.css';
 
 class Welcome extends React.Component {
   render() {
-    return <div>Welcome</div>;
+    return (
+      <div>
+        <img
+          src={process.env.PUBLIC_URL + '/images/soundWaves.gif'}
+          alt="gif"
+        />
+      </div>
+    );
   }
 }
 

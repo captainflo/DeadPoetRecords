@@ -46,16 +46,18 @@ class UserEdit extends React.Component {
     );
   };
 
-  uploadWidgetAudio = () => {
-    window.cloudinary.openUploadWidget(
-      { cloud_name: 'dxeiiwxha', upload_preset: 'mqdda5jq', tags: ['m4a'] },
-      (error, result) => {
-        if (result) {
-          console.log(result[0]);
-          this.setState({ image: result[0].url });
-          this.setState({ publicId: result[0].public_id });
-        }
-      }
+  downloadAudio = () => {
+    return (
+      <a
+        href={`https://res.cloudinary.com/dxeiiwxha/video/upload/fl_attachment/v1587734345/audio/kzeffgwliqlcgmil26eg`}
+      >
+        <img
+          src={process.env.PUBLIC_URL + '/images/icon-sound.png'}
+          alt="W3Schools"
+          width="104"
+          height="142"
+        />
+      </a>
     );
   };
 
@@ -143,13 +145,6 @@ class UserEdit extends React.Component {
                 className="upload-button"
               >
                 <i className="fas fa-camera"></i>
-              </p>
-
-              <p
-                onClick={this.uploadWidgetAudio.bind(this)}
-                className="upload-button"
-              >
-                <i className="fas fa-headphones-alt"></i>
               </p>
 
               {this.state.image ? (

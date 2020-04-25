@@ -9,7 +9,7 @@ cloudinary.config({
 
 exports.deleteImage = function (req, res, next) {
   console.log(req.body.img);
-  cloudinary.uploader.destroy(req.body.img, { resource_type: 'video' });
+  cloudinary.uploader.destroy(req.body.img);
 };
 
 exports.deleteAudio = function (req, res, next) {

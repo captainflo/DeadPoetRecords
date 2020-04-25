@@ -34,7 +34,7 @@ class Sidebar extends React.Component {
           <div className="user-view">
             <div className="background">
               <img
-                src={process.env.PUBLIC_URL + '/images/water.jpg'}
+                src={process.env.PUBLIC_URL + '/images/soundWaves.gif'}
                 alt="background"
                 className="sidebar-background"
               />
@@ -87,7 +87,7 @@ class Sidebar extends React.Component {
 
 function mapStateToPros(state) {
   return {
-    authenticated: state.auth.authenticated
+    authenticated: state.auth.authenticated,
   };
 }
 

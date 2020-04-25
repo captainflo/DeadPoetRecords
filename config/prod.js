@@ -6,4 +6,7 @@ module.exports = {
   cookieKey: process.env.COOKIE_KEY,
   secret: process.env.SECRET,
   siteUrl: process.env.SITE_URL,
+  cloudinaryClientName: process.env.CLOUDINARY_NAME,
+  cloudinaryClientID: process.env.CLOUDINARY_CLIENT_ID,
+  cloudinaryClientSecret: process.env.CLOUDINARY_CLIENT_SECRET,
 };
