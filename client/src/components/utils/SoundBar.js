@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import ReactJkMusicPlayer from 'react-jinke-music-player';
-import 'react-jinke-music-player/assets/index.css';
 import '../css/SoundBar.css';
 
 const audioList1 = [
@@ -40,11 +39,12 @@ class SoundBar extends React.Component {
     return (
       <>
         <ReactJkMusicPlayer
+          autoPlay={false}
           playIndex={0}
           audioLists={audioList1}
           showDownload={false}
-          mode={'full'}
           showReload={false}
+          mode={'full'}
           getAudioInstance={(instance) => (this.audioInstance = instance)}
         />
       </>
