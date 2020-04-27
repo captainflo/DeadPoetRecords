@@ -12,6 +12,12 @@ class Header extends React.Component {
             <Link to="/signout">Signout</Link>
           </li>
           <li>
+            <Link to="/register/music">Add Music</Link>
+          </li>
+          <li>
+            <Link to="/music">Music</Link>
+          </li>
+          <li>
             <Link to={`/user/${this.props.authenticated._id}`}>
               <img
                 className="avatar"

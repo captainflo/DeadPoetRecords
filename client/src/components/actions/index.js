@@ -1,6 +1,13 @@
 import keys from '../../config/keys';
 import axios from 'axios';
-import { AUTH_USER, AUTH_ERROR, EDIT_USER } from './types';
+import {
+  AUTH_USER,
+  AUTH_ERROR,
+  EDIT_USER,
+  MUSIC,
+  ALL_MUSIC,
+  MUSIC_ERROR,
+} from './types';
 import * as JWT from 'jwt-decode';
 
 ///////////////////////////////// User Authentification ///////////////////////////////////////
@@ -108,6 +115,33 @@ export const deleteUser = (id, callback) => async (dispatch) => {
   localStorage.removeItem('token');
   callback(); /* history callback */
 };
+
+///////////////////////////////// Music ///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// Create Music
+export const createMusic = (form, callback) => async (dispatch) => {
+  try {
+    const response = await axios.post(`/api/music/create`, form);
+    dispatch({ type: MUSIC, payload: response.data });
+    callback(); /* history callback */
+  } catch (e) {
+    dispatch({ type: MUSIC_ERROR, payload: 'error create music' });
+  }
+};
+
+// All Music
+export const getAllMusic = () => async (dispatch) => {
+  try {
+    const response = await axios.post(`/api/all/music`);
+    dispatch({ type: ALL_MUSIC, payload: response.data });
+  } catch (e) {
+    dispatch({ type: MUSIC_ERROR, payload: 'error all music' });
+  }
+};
+
+////////////////////////////////////////// Cloudinary ////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 // Cloudinary Delete Image
 export const deleteImage = (image) => async () => {

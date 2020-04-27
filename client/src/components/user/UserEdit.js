@@ -13,6 +13,7 @@ class UserEdit extends React.Component {
     image: '',
     publicId: '',
   };
+
   onDelete = () => {
     const id = this.props.auth._id;
     this.props.deleteUser(id, () => {
@@ -24,12 +25,7 @@ class UserEdit extends React.Component {
     const image = {
       img: this.state.publicId,
     };
-    const sound = {
-      audio: this.state.publicId,
-    };
-
     this.props.deleteImage(image);
-    this.props.deleteAudio(sound);
     this.setState({ image: '' });
   };
 
@@ -43,21 +39,6 @@ class UserEdit extends React.Component {
           this.setState({ publicId: result[0].public_id });
         }
       }
-    );
-  };
-
-  downloadAudio = () => {
-    return (
-      <a
-        href={`https://res.cloudinary.com/dxeiiwxha/video/upload/fl_attachment/v1587734345/audio/kzeffgwliqlcgmil26eg`}
-      >
-        <img
-          src={process.env.PUBLIC_URL + '/images/icon-sound.png'}
-          alt="W3Schools"
-          width="104"
-          height="142"
-        />
-      </a>
     );
   };
 

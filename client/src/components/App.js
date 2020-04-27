@@ -15,7 +15,7 @@ import Signup from './auth/Signup';
 import UserShow from './user/UserShow';
 import UserEdit from './user/UserEdit';
 import Music from './pages/Music';
-import MusicList from './pages/MusicList';
+import RegisterMusic from './pages/RegisterMusic';
 
 class App extends React.Component {
   componentDidMount() {
@@ -34,13 +34,13 @@ class App extends React.Component {
           <Route exact path="/signout" component={Signout} />
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/signup" component={Signup} />
-          {/* <Route exact path="/music" component={Music} /> */}
-          <Route exact path="/music/list" component={MusicList} />
+          <Route exact path="/music" component={Music} />
 
           {this.props.authenticated ? (
             <div>
               <Route exact path="/user/:id" component={UserShow} />
               <Route exact path="/user/edit/:id" component={UserEdit} />
+              <Route exact path="/register/music" component={RegisterMusic} />
             </div>
           ) : (
             ''

@@ -113,6 +113,23 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
   border: 2px solid #fff;
 }
 
+/* register Music */
+.box-register {
+  border-radius: 5px;
+  margin: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #630503 !important;
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: #630503 !important;
+}
+
 @media only screen and (max-width: 600px) {
   /* Signin Signup */
   .box-input-signin {
