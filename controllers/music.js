@@ -5,7 +5,7 @@ exports.createMusic = function (req, res, next) {
     name: req.body.name,
     singer: req.body.singer,
     cover: req.body.cover,
-    audio: req.body.audio,
+    musicSrc: req.body.audio,
     genre: req.body.genre,
   });
 
@@ -17,12 +17,31 @@ exports.createMusic = function (req, res, next) {
   });
 };
 
+exports.getMusicByGenre = function (req, res, next) {
+  console.log(req.params.id);
+  if (req.params.id === 'All') {
+    Music.find(function (error, music) {
+      if (error) {
+        return next(error);
+      }
+      res.send(music);
+    });
+  } else {
+    Music.find({ genre: req.params.id }, function (error, music) {
+      if (error) {
+        return next(error);
+      }
+      res.send(music);
+    });
+  }
+};
+
 exports.getAllMusic = function (req, res, next) {
-  Music.find(function (error, message) {
+  Music.find(function (error, music) {
     if (error) {
       return next(error);
     }
-    res.send(message);
+    res.send(music);
   });
 };
 

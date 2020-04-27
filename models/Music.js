@@ -6,7 +6,7 @@ const musicSchema = new Schema({
   name: String,
   singer: String,
   cover: String,
-  audio: String,
+  musicSrc: String,
   genre: String,
 });
 

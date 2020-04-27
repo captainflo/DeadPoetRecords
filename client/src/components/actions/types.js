@@ -7,3 +7,4 @@ export const AUTH_ERROR = 'auth_error';
 export const MUSIC = 'music';
 export const ALL_MUSIC = 'all_music';
 export const MUSIC_ERROR = 'music_error';
+export const MUSIC_BY_GENRE = 'music_by_GENRE';

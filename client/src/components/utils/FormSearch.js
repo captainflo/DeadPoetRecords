@@ -1,8 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import * as actions from '../actions';
+import { withRouter } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import '../css/FormSearch.css';
 
 const genres = [
+  'All',
   'Acoustic',
   'Alternative',
   'Blues',
@@ -37,37 +43,37 @@ const renderGenreSelector = ({ input, meta: { touched, error } }) => (
 );
 
 class FormSearch extends React.Component {
+  state = {
+    audio: '',
+  };
   componentDidMount() {
     const elems = document.querySelectorAll('select');
     M.FormSelect.init(elems, {});
   }
   submit = (form) => {
-    console.log(form);
+    this.props.history.push(`/music/list/${form.value}`);
+    this.props.getMusicByGenre(form.value);
   };
 
   render() {
     const { handleSubmit, submitting } = this.props;
     return (
       <form onSubmit={handleSubmit(this.submit)}>
-        <div className="row">
-          <div className="col m6 s12">
-            <Field name="value" component={renderGenreSelector} />
-          </div>
-          <div className="col m6 s12">
-            <button
-              type="submit"
-              disabled={submitting}
-              className="waves-effect waves-light btn"
-            >
-              Search
-            </button>
-          </div>
+        <div className="box-search hoverable">
+          <Field name="value" component={renderGenreSelector} />
+          <button type="submit" disabled={submitting}>
+            <i className="fas fa-search"></i>
+          </button>
         </div>
       </form>
     );
   }
 }
 
-export default reduxForm({
-  form: 'simple', // a unique identifier for this form
-})(FormSearch);
+export default compose(
+  reduxForm({
+    form: 'simple', // a unique identifier for this form
+  }),
+  connect(null, actions),
+  withRouter
+)(FormSearch);

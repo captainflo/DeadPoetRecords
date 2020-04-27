@@ -10,9 +10,7 @@ import { Link } from 'react-router-dom';
 class Signup extends React.Component {
   render() {
     const submit = (form) => {
-      this.props.signup(form, (id) =>
-        this.props.history.push(`/dashboard/${id}`)
-      );
+      this.props.signup(form, (id) => this.props.history.push(`/`));
     };
 
     const { error, handleSubmit, submitting } = this.props;

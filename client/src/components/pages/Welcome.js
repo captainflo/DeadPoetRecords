@@ -5,13 +5,9 @@ import * as actions from '../actions';
 import FormSearch from '../utils/FormSearch';
 
 class Welcome extends React.Component {
-  componentDidMount() {
-    this.props.getAllMusic();
-  }
   render() {
-    console.log(this.props.music);
     return (
-      <div>
+      <div className="banner-welcome">
         <FormSearch />
       </div>
     );

@@ -1,2 +1,8 @@
+.banner-welcome {
+  background-image: url('/images/soundWaves.gif');
+  width: 100%;
+  height: 350px;
+  padding-top: 10%;
+}
 @media only screen and (max-width: 600px) {
 }

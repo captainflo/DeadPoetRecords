@@ -5,6 +5,7 @@ import {
   AUTH_ERROR,
   EDIT_USER,
   MUSIC,
+  MUSIC_BY_GENRE,
   ALL_MUSIC,
   MUSIC_ERROR,
 } from './types';
@@ -135,6 +136,16 @@ export const getAllMusic = () => async (dispatch) => {
   try {
     const response = await axios.post(`/api/all/music`);
     dispatch({ type: ALL_MUSIC, payload: response.data });
+  } catch (e) {
+    dispatch({ type: MUSIC_ERROR, payload: 'error all music' });
+  }
+};
+
+// get Music By genre
+export const getMusicByGenre = (genre) => async (dispatch) => {
+  try {
+    const response = await axios.post(`/api/music/list/${genre}`);
+    dispatch({ type: MUSIC_BY_GENRE, payload: response.data });
   } catch (e) {
     dispatch({ type: MUSIC_ERROR, payload: 'error all music' });
   }

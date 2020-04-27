@@ -1,0 +1,35 @@
+.box-search {
+  display: flex;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 3rem;
+  width: 260px;
+  background-color: #fff;
+  color: black;
+}
+
+.box-search button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  width: 50px;
+}
+
+.box-search .input-field {
+  margin-top: 0px;
+}
+.box-search .input-field .prefix {
+  left: 5px;
+}
+
+.box-search .select-wrapper input.select-dropdown {
+  border-bottom: none;
+  margin: 0 0 0px 0;
+}
+
+.box-search .select-wrapper input.select-dropdown:focus {
+  border-bottom: none !important;
+}

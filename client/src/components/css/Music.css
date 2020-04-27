@@ -4,3 +4,29 @@
   border: 1px solid black;
   cursor: pointer;
 }
+
+.list-audio {
+  display: flex;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 10px;
+  align-items: center;
+}
+
+.cover-audio {
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+}
+
+.btn-play {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.add-cart {
+  margin-left: auto;
+}

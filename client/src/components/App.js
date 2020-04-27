@@ -34,7 +34,7 @@ class App extends React.Component {
           <Route exact path="/signout" component={Signout} />
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/music" component={Music} />
+          <Route exact path="/music/list/:id" component={Music} />
 
           {this.props.authenticated ? (
             <div>

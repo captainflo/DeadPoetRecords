@@ -9,9 +9,7 @@ import { Link } from 'react-router-dom';
 
 class Signin extends React.Component {
   submit = (form) => {
-    this.props.signin(form, (id) =>
-      this.props.history.push(`/dashboard/${id}`)
-    );
+    this.props.signin(form, (id) => this.props.history.push(`/`));
   };
   render() {
     const { error, handleSubmit, submitting } = this.props;
