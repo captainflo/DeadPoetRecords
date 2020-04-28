@@ -63,6 +63,12 @@ class App extends React.Component {
     });
   };
 
+  closeSidebar = () => {
+    var elem = document.querySelector('.sidenav');
+    var instance = new M.Sidenav(elem, {});
+    instance.close();
+  };
+
   render() {
     return (
       <div>
@@ -72,6 +78,7 @@ class App extends React.Component {
             total={this.state.total}
             music={this.state.music}
             deleteItem={this.deleteItem}
+            closeSidebar={this.closeSidebar}
           />
           <Route exact path="/" component={Welcome} />
           <Route exact path="/signout" component={Signout} />

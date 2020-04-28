@@ -6,7 +6,7 @@ class SidebarEcom extends React.Component {
     return this.props.music.map((music, idx) => {
       return (
         <div key={idx} class="card-product hoverable">
-          <img src={music.audio.cover} />
+          <img src={music.audio.cover} alt="cover" />
 
           <div class="card-product-infos">
             <div
@@ -27,7 +27,8 @@ class SidebarEcom extends React.Component {
   render() {
     return (
       <ul id="slide-ecom" className="sidenav sidenavEcom">
-        <li className=" title-shop center">Shopping Cart</li>
+        <i class="far fa-times-circle sidenav-close right close-side"></i>
+        <li className=" title-shop center">Shopping Cart </li>
         <li>
           <div className="divider"></div>
         </li>

@@ -134,6 +134,11 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
 .fa-shopping-cart {
   font-size: 15px;
 }
+.close-side {
+  padding-right: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+}
 
 #slide-ecom {
   background-color: black;

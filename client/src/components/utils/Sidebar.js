@@ -12,6 +12,24 @@ class Sidebar extends React.Component {
               <i className="material-icons">cloud</i> Signout
             </Link>
           </li>
+          <li>
+            <Link to="/music/list/All">
+              <i className="fas fa-headphones-alt"></i> Music
+            </Link>
+          </li>
+          <li>
+            <a
+              onClick={() => this.props.closeSidebar()}
+              data-target="slide-ecom"
+              className="sidenav-trigger sidenav-close"
+              href="#/"
+            >
+              <i className="fas fa-shopping-cart">
+                {this.props.quantity >= 1 && this.props.quantity}
+              </i>{' '}
+              Shopping
+            </a>
+          </li>
         </div>
       );
     } else {
