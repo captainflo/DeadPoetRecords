@@ -22,6 +22,7 @@ class Music extends React.Component {
   render() {
     return (
       <div>
+        <h4>List Music</h4>
         <FronSearch />
         {this.props.sounds.length !== 0 ? (
           <div>

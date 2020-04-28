@@ -130,6 +130,11 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
   color: #630503 !important;
 }
 
+/* Sidbar right */
+.side-right {
+  right: 0 !important;
+  left: none !important;
+}
 @media only screen and (max-width: 600px) {
   /* Signin Signup */
   .box-input-signin {

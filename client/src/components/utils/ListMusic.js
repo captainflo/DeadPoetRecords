@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import '../css/Music.css';
+import ModalPlan from './ModalPlan';
 
 class Music extends React.Component {
   renderList = () => {
@@ -20,7 +21,11 @@ class Music extends React.Component {
             {sound.singer}
           </div>
           <div className="add-cart">
-            <i className="fas fa-cart-arrow-down"></i>
+            <ModalPlan
+              name={sound.name}
+              singer={sound.singer}
+              cover={sound.cover}
+            />
           </div>
         </div>
       );
@@ -28,12 +33,7 @@ class Music extends React.Component {
   };
 
   render() {
-    return (
-      <div>
-        <h4>List of tracks</h4>
-        {this.renderList()}
-      </div>
-    );
+    return <div>{this.renderList()}</div>;
   }
 }
 

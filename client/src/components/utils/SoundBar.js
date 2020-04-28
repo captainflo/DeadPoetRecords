@@ -16,7 +16,7 @@ class SoundBar extends React.Component {
           <ReactJkMusicPlayer
             playIndex={this.props.playIndex}
             audioLists={this.props.audio}
-            autoPlayInitLoadPlayList={true}
+            autoPlayInitLoadPlayList={false}
             showDownload={false}
             showReload={false}
             clearPriorAudioLists={true}

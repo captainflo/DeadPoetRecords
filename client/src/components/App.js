@@ -18,18 +18,26 @@ import Music from './pages/Music';
 import RegisterMusic from './pages/RegisterMusic';
 
 class App extends React.Component {
+  state = {
+    quantity: 0,
+    total: 0,
+  };
+
   componentDidMount() {
     this.props.fetchUser();
     // Sidebar
     var elems = document.querySelectorAll('.sidenav');
     M.Sidenav.init(elems, {});
+    // Sidebar Ecom
+    var elemside = document.querySelectorAll('.sidenavEcom');
+    M.Sidenav.init(elemside, { edge: 'right' });
   }
 
   render() {
     return (
       <div>
         <BrowserRouter>
-          <Header />
+          <Header quantity={this.state.quantity} total={this.state.total} />
           <Route exact path="/" component={Welcome} />
           <Route exact path="/signout" component={Signout} />
           <Route exact path="/signin" component={Signin} />

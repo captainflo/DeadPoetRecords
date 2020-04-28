@@ -51,7 +51,7 @@ class FormSearch extends React.Component {
     M.FormSelect.init(elems, {});
   }
   submit = (form) => {
-    this.props.history.push(`/music/list/${form.value}`);
+    if (form.value) this.props.history.push(`/music/list/${form.value}`);
     this.props.getMusicByGenre(form.value);
   };
 
@@ -61,7 +61,11 @@ class FormSearch extends React.Component {
       <form onSubmit={handleSubmit(this.submit)}>
         <div className="box-search hoverable">
           <Field name="value" component={renderGenreSelector} />
-          <button type="submit" disabled={submitting}>
+          <button
+            type="submit"
+            className="btn-search hoverable"
+            disabled={submitting}
+          >
             <i className="fas fa-search"></i>
           </button>
         </div>

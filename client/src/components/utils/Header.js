@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Sidebar from '../utils/Sidebar';
+import SideBarEcom from './SideBarEcom';
 
 class Header extends React.Component {
   renderLinks() {
@@ -16,6 +17,11 @@ class Header extends React.Component {
           </li>
           <li>
             <Link to="/music/list/All">Music</Link>
+          </li>
+          <li>
+            <p data-target="slide-ecom" className="sidenav-trigger" to={''}>
+              <i className="fas fa-shopping-cart"></i>
+            </p>
           </li>
           <li>
             <Link to={`/user/${this.props.authenticated._id}`}>
@@ -65,6 +71,7 @@ class Header extends React.Component {
             </ul>
           </div>
         </nav>
+        <SideBarEcom total={this.props.total} quantity={this.props.quantity} />
         <Sidebar />
       </div>
     );
