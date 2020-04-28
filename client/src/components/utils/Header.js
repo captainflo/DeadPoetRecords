@@ -20,6 +20,7 @@ class Header extends React.Component {
           </li>
           <li>
             <p data-target="slide-ecom" className="sidenav-trigger" to={''}>
+              {this.props.quantity >= 1 && this.props.quantity}
               <i className="fas fa-shopping-cart"></i>
             </p>
           </li>
@@ -71,7 +72,12 @@ class Header extends React.Component {
             </ul>
           </div>
         </nav>
-        <SideBarEcom total={this.props.total} quantity={this.props.quantity} />
+        <SideBarEcom
+          total={this.props.total}
+          quantity={this.props.quantity}
+          music={this.props.music}
+          deleteItem={this.props.deleteItem}
+        />
         <Sidebar />
       </div>
     );

@@ -29,6 +29,7 @@ class Music extends React.Component {
             <ListMusic
               selectSound={this.selectSound}
               audio={this.props.sounds}
+              addItem={this.props.addItem}
             />
             <SoundBar
               audio={this.props.sounds}

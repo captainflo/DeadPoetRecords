@@ -32,6 +32,10 @@
   margin-right: 30px;
 }
 
+.fa-cart-arrow-down {
+  color: #fff;
+}
+
 .btn-cart {
   cursor: pointer;
 }

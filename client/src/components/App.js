@@ -21,6 +21,7 @@ class App extends React.Component {
   state = {
     quantity: 0,
     total: 0,
+    music: [],
   };
 
   componentDidMount() {
@@ -33,16 +34,54 @@ class App extends React.Component {
     M.Sidenav.init(elemside, { edge: 'right' });
   }
 
+  addItem = (price, audio, plan) => {
+    this.setState({
+      quantity: this.state.quantity + 1,
+      total: this.state.total + price,
+      music: [
+        ...this.state.music,
+        {
+          audio,
+          plan,
+          price,
+        },
+      ],
+    });
+    console.log(audio, plan);
+    var elem = document.querySelector('.sidenavEcom');
+    var instance = new M.Sidenav(elem, { edge: 'right' });
+    instance.open();
+  };
+
+  deleteItem = (idx, price) => {
+    this.state.music.splice(idx, idx + 1);
+    this.forceUpdate();
+    console.log(this.state.music);
+    this.setState({
+      total: this.state.total - price,
+      quantity: this.state.quantity - 1,
+    });
+  };
+
   render() {
     return (
       <div>
         <BrowserRouter>
-          <Header quantity={this.state.quantity} total={this.state.total} />
+          <Header
+            quantity={this.state.quantity}
+            total={this.state.total}
+            music={this.state.music}
+            deleteItem={this.deleteItem}
+          />
           <Route exact path="/" component={Welcome} />
           <Route exact path="/signout" component={Signout} />
           <Route exact path="/signin" component={Signin} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/music/list/:id" component={Music} />
+          <Route
+            exact
+            path="/music/list/:id"
+            render={(props) => <Music {...props} addItem={this.addItem} />}
+          />
 
           {this.props.authenticated ? (
             <div>

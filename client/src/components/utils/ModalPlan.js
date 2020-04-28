@@ -7,6 +7,11 @@ class ModalPlan extends React.Component {
     M.Modal.init(elemModal, {});
   }
   render() {
+    const audio = {
+      name: this.props.name,
+      singer: this.props.singer,
+      cover: this.props.cover,
+    };
     return (
       <div>
         <a
@@ -27,54 +32,78 @@ class ModalPlan extends React.Component {
                   <div className="card-panel black">
                     <h6 className="center">Basic $25</h6>
                     <hr></hr>
-                    <span className="white-text content-plan">
-                      I am a very simple card. I am good at containing small
-                      bits of information. I am convenient because I require
-                      little markup to use effectively. I am similar to what is
-                      called a panel in other frameworks.
-                    </span>
+                    <div className="white-text content-plan">
+                      <p>MP3 + WAV</p>
+                      <p>5,000 sales</p>
+                      <p>50,000 streams</p>
+                      <p>Non-exclusive (lease)</p>
+                    </div>
                     <hr></hr>
-                    <div className="btn-add center">Add Cart</div>
+                    <div
+                      onClick={() => this.props.addItem(25, audio, 'Basic')}
+                      className="btn-add center modal-close"
+                    >
+                      Add Cart
+                    </div>
                   </div>
                 </div>
                 <div className="col s12 m3">
                   <div className="card-panel black">
-                    <h6 className="center">Basic $50</h6>
+                    <h6 className="center">Premium $50</h6>
                     <hr></hr>
-                    <span className="white-text content-plan">
-                      I am a very simple card. I am good at containing small
-                      bits of information. I am convenient because I require
-                      little markup to use effectively. I am similar to what is
-                      called a panel in other frameworks.
-                    </span>
+                    <div className="white-text content-plan">
+                      <p>MP3 + WAV</p>
+                      <p>10,000 sales</p>
+                      <p>100,000 streams</p>
+                      <p>Non-exclusive (lease)</p>
+                    </div>
                     <hr></hr>
-                    <div className="btn-add center">Add Cart</div>
+                    <div
+                      onClick={() => this.props.addItem(50, audio, 'Premium')}
+                      className="btn-add center modal-close"
+                    >
+                      Add Cart
+                    </div>
                   </div>
                 </div>
                 <div className="col s12 m3">
                   <div className="card-panel black">
-                    <h6 className="center">Basic $100</h6>
+                    <h6 className="center">Trackout $100</h6>
                     <hr></hr>
-                    <span className="white-text content-plan">
-                      I am a very simple card. I am good at containing small
-                      bits of information.
-                    </span>
+                    <div className="white-text content-plan">
+                      <p>MP3 + WAV + Trackout</p>
+                      <p>Unlimited sales</p>
+                      <p>Unlimited sales</p>
+                      <p>Non-exclusive (lease)</p>
+                    </div>
                     <hr></hr>
-                    <div className="btn-add center">Add Cart</div>
+                    <div
+                      onClick={() => this.props.addItem(100, audio, 'Trackout')}
+                      className="btn-add center modal-close"
+                    >
+                      Add Cart
+                    </div>
                   </div>
                 </div>
                 <div className="col s12 m3">
                   <div className="card-panel black">
-                    <h6 className="center">Basic $200</h6>
+                    <h6 className="center">Exclusive $200</h6>
                     <hr></hr>
-                    <span className="white-text content-plan">
-                      I am a very simple card. I am good at containing small
-                      bits of information. I am convenient because I require
-                      little markup to use effectively. I am similar to what is
-                      called a panel in other frameworks.
-                    </span>
+                    <div className="white-text content-plan">
+                      <p>MP3 + WAV + Trackout</p>
+                      <p>Unlimited sales</p>
+                      <p>Unlimited sales</p>
+                      <p>Full ownership</p>
+                    </div>
                     <hr></hr>
-                    <div className="btn-add center">Add Cart</div>
+                    <div
+                      onClick={() =>
+                        this.props.addItem(200, audio, 'Exclusive')
+                      }
+                      className="btn-add center modal-close "
+                    >
+                      Add Cart
+                    </div>
                   </div>
                 </div>
               </div>
