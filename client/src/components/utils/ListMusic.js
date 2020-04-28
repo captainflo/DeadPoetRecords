@@ -10,7 +10,7 @@ class Music extends React.Component {
       return (
         <div key={idx} className="list-audio">
           <button
-            className="btn-play"
+            className="btn-play hoverable"
             onClick={() => this.props.selectSound(idx)}
           >
             <i className="far fa-play-circle"></i>

@@ -27,7 +27,9 @@ class SidebarEcom extends React.Component {
   render() {
     return (
       <ul id="slide-ecom" className="sidenav sidenavEcom">
-        <i class="far fa-times-circle sidenav-close right close-side"></i>
+        <li onClick={() => this.props.closeSidebarEcom()}>
+          <i class="far fa-times-circle right close-side"></i>
+        </li>
         <li className=" title-shop center">Shopping Cart </li>
         <li>
           <div className="divider"></div>

@@ -77,6 +77,7 @@ class Header extends React.Component {
           quantity={this.props.quantity}
           music={this.props.music}
           deleteItem={this.props.deleteItem}
+          closeSidebarEcom={this.props.closeSidebarEcom}
         />
         <Sidebar
           total={this.props.total}

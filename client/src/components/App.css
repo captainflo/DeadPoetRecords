@@ -138,6 +138,7 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
   padding-right: 5px;
   margin-top: 10px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 #slide-ecom {
@@ -199,6 +200,7 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
 
 .title-shop {
   font-size: 20px;
+  margin-left: 45px;
 }
 
 .card-product {
