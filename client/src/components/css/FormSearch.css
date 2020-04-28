@@ -1,7 +1,16 @@
+.box-search-welcome {
+  display: flex;
+  border-radius: 5px;
+  margin-left: auto;
+  height: 3rem;
+  width: 270px;
+  background-color: #fff;
+  color: black;
+}
+
 .box-search {
   display: flex;
   border-radius: 5px;
-
   height: 3rem;
   width: 270px;
   background-color: #fff;

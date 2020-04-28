@@ -13,7 +13,7 @@ class SidebarEcom extends React.Component {
               className="trash right hoverable"
               onClick={() => this.props.deleteItem(idx, music.price)}
             >
-              <i class="far fa-trash-alt"></i>
+              <i className="far fa-trash-alt"></i>
             </div>
             <h2>{music.audio.name}</h2>
             <p>{music.audio.singer}</p>
@@ -28,7 +28,7 @@ class SidebarEcom extends React.Component {
     return (
       <ul id="slide-ecom" className="sidenav sidenavEcom">
         <li onClick={() => this.props.closeSidebarEcom()}>
-          <i class="far fa-times-circle right close-side"></i>
+          <i className="far fa-times-circle right close-side"></i>
         </li>
         <li className=" title-shop center">Shopping Cart </li>
         <li>

@@ -22,10 +22,12 @@ class Music extends React.Component {
   render() {
     return (
       <div>
-        <h4>List Music</h4>
-        <FronSearch />
+        <div className="box-search-form">
+          <h4>List Music</h4>
+          <FronSearch />
+        </div>
         {this.props.sounds.length !== 0 ? (
-          <div>
+          <div className="box-list-music">
             <ListMusic
               selectSound={this.selectSound}
               audio={this.props.sounds}
@@ -37,7 +39,7 @@ class Music extends React.Component {
             />
           </div>
         ) : (
-          'no list found'
+          <div className="center">No list found </div>
         )}
       </div>
     );

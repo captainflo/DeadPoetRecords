@@ -1,8 +1,17 @@
+/* Music Page */
+.box-search-form {
+  padding-left: 20px;
+}
+
 .box-play {
   margin-left: 10px;
   width: 120px;
   border: 1px solid black;
   cursor: pointer;
+}
+
+.box-list-music {
+  margin-top: 40px;
 }
 
 .list-audio {

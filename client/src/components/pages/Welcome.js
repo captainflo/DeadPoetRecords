@@ -8,7 +8,10 @@ class Welcome extends React.Component {
   render() {
     return (
       <div className="banner-welcome">
-        <FormSearch />
+        <h4 className="center">Download the beat of DJ FUMFUM</h4>
+        <div className="box-form-search-welcome">
+          <FormSearch />
+        </div>
       </div>
     );
   }

@@ -47,7 +47,6 @@ class App extends React.Component {
         },
       ],
     });
-    console.log(audio, plan);
     var elem = document.querySelector('.sidenavEcom');
     var instance = new M.Sidenav(elem, { edge: 'right' });
     instance.open();

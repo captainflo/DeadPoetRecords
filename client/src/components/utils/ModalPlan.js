@@ -30,7 +30,7 @@ class ModalPlan extends React.Component {
               <div className="row">
                 <div className="col s12 m3">
                   <div className="card-panel black">
-                    <h6 className="center">Basic $25</h6>
+                    <h6 className="center">Basic $1000</h6>
                     <hr></hr>
                     <div className="white-text content-plan">
                       <p>MP3 + WAV</p>
@@ -40,7 +40,7 @@ class ModalPlan extends React.Component {
                     </div>
                     <hr></hr>
                     <div
-                      onClick={() => this.props.addItem(25, audio, 'Basic')}
+                      onClick={() => this.props.addItem(1000, audio, 'Basic')}
                       className="btn-add center modal-close"
                     >
                       Add Cart
@@ -49,7 +49,7 @@ class ModalPlan extends React.Component {
                 </div>
                 <div className="col s12 m3">
                   <div className="card-panel black">
-                    <h6 className="center">Premium $50</h6>
+                    <h6 className="center">Premium $2500</h6>
                     <hr></hr>
                     <div className="white-text content-plan">
                       <p>MP3 + WAV</p>
@@ -59,7 +59,7 @@ class ModalPlan extends React.Component {
                     </div>
                     <hr></hr>
                     <div
-                      onClick={() => this.props.addItem(50, audio, 'Premium')}
+                      onClick={() => this.props.addItem(2500, audio, 'Premium')}
                       className="btn-add center modal-close"
                     >
                       Add Cart
@@ -68,7 +68,7 @@ class ModalPlan extends React.Component {
                 </div>
                 <div className="col s12 m3">
                   <div className="card-panel black">
-                    <h6 className="center">Trackout $100</h6>
+                    <h6 className="center">Trackout $5000</h6>
                     <hr></hr>
                     <div className="white-text content-plan">
                       <p>MP3 + WAV + Trackout</p>
@@ -78,7 +78,9 @@ class ModalPlan extends React.Component {
                     </div>
                     <hr></hr>
                     <div
-                      onClick={() => this.props.addItem(100, audio, 'Trackout')}
+                      onClick={() =>
+                        this.props.addItem(5000, audio, 'Trackout')
+                      }
                       className="btn-add center modal-close"
                     >
                       Add Cart
@@ -87,7 +89,7 @@ class ModalPlan extends React.Component {
                 </div>
                 <div className="col s12 m3">
                   <div className="card-panel black">
-                    <h6 className="center">Exclusive $200</h6>
+                    <h6 className="center">Exclusive $10000</h6>
                     <hr></hr>
                     <div className="white-text content-plan">
                       <p>MP3 + WAV + Trackout</p>
@@ -98,7 +100,7 @@ class ModalPlan extends React.Component {
                     <hr></hr>
                     <div
                       onClick={() =>
-                        this.props.addItem(200, audio, 'Exclusive')
+                        this.props.addItem(10000, audio, 'Exclusive')
                       }
                       className="btn-add center modal-close "
                     >

@@ -133,6 +133,8 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
 /* Sidbar right */
 .fa-shopping-cart {
   font-size: 15px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 .close-side {
   padding-right: 5px;
@@ -250,6 +252,7 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
   nav .brand-logo {
     font-size: 1.1rem !important;
     margin-left: 0px;
+    width: 250px;
   }
 
   nav .brand-logo i {
