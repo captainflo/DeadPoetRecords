@@ -16,7 +16,7 @@ class Payments extends React.Component {
         token={(token) =>
           this.props.handleToken(token, form, () => {
             this.props.paymentSucces();
-            this.props.history.push(`/`);
+            this.props.history.push(`/succes/payment`);
           })
         }
         stripeKey={process.env.REACT_APP_STRIPE_KEY}

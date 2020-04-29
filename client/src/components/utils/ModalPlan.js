@@ -11,6 +11,7 @@ class ModalPlan extends React.Component {
       name: this.props.name,
       singer: this.props.singer,
       cover: this.props.cover,
+      musicSrc: this.props.musicSrc,
     };
     return (
       <div>

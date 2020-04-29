@@ -25,6 +25,7 @@ class Music extends React.Component {
               name={sound.name}
               singer={sound.singer}
               cover={sound.cover}
+              musicSrc={sound.musicSrc}
               addItem={this.props.addItem}
             />
           </div>

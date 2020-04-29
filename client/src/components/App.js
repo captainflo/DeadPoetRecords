@@ -17,9 +17,11 @@ import UserEdit from './user/UserEdit';
 import Music from './pages/Music';
 import RegisterMusic from './pages/RegisterMusic';
 import ModalAgreement from './utils/ModalAgreement';
+import SucessPayment from './pages/SucessPayment';
 
 class App extends React.Component {
   state = {
+    payment: true,
     quantity: 0,
     total: 0,
     music: [],
@@ -28,10 +30,10 @@ class App extends React.Component {
   componentDidMount() {
     this.props.fetchUser();
     // Sidebar
-    var elems = document.querySelectorAll('.sidenav');
+    const elems = document.querySelectorAll('.sidenav');
     M.Sidenav.init(elems, {});
     // Sidebar Ecom
-    var elemside = document.querySelectorAll('.sidenavEcom');
+    const elemside = document.querySelectorAll('.sidenavEcom');
     M.Sidenav.init(elemside, { edge: 'right' });
   }
 
@@ -48,8 +50,8 @@ class App extends React.Component {
         },
       ],
     });
-    var elem = document.querySelector('.sidenavEcom');
-    var instance = new M.Sidenav(elem, { edge: 'right' });
+    const elem = document.querySelector('.sidenavEcom');
+    const instance = new M.Sidenav(elem, { edge: 'right' });
     instance.open();
   };
 
@@ -64,19 +66,28 @@ class App extends React.Component {
   };
 
   closeSidebar = () => {
-    var elem = document.querySelector('.sidenav');
-    var instance = new M.Sidenav(elem, {});
+    const elem = document.querySelector('.sidenav');
+    const instance = new M.Sidenav(elem, {});
     instance.close();
   };
 
   closeSidebarEcom = () => {
-    var elem = document.querySelector('.sidenavEcom');
-    var instance = new M.Sidenav(elem, { edge: 'right' });
+    const elem = document.querySelector('.sidenavEcom');
+    const instance = new M.Sidenav(elem, { edge: 'right' });
     instance.close();
   };
 
   paymentSucces = () => {
-    this.setState({ quantity: 0, total: 0, music: [] });
+    this.setState({ payment: true });
+    const files = [];
+    for (let i = 0; i < this.state.music.length; i++) {
+      let str = this.state.music[i].audio.musicSrc;
+      const music = str.replace('upload/', 'upload/fl_attachment/');
+      files.push(music);
+    }
+    for (var ii = 0; ii < files.length; ii++) {
+      window.open(files[ii]);
+    }
   };
 
   render() {
@@ -104,12 +115,22 @@ class App extends React.Component {
             path="/music/list/:id"
             render={(props) => <Music {...props} addItem={this.addItem} />}
           />
-
           {this.props.authenticated ? (
             <div>
               <Route exact path="/user/:id" component={UserShow} />
               <Route exact path="/user/edit/:id" component={UserEdit} />
               <Route exact path="/register/music" component={RegisterMusic} />
+              <Route
+                exact
+                path="/succes/payment"
+                render={(props) => (
+                  <SucessPayment
+                    {...props}
+                    music={this.state.music}
+                    payment={this.state.payment}
+                  />
+                )}
+              />
             </div>
           ) : (
             ''

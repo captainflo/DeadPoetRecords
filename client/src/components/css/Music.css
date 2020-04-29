@@ -59,6 +59,11 @@
   cursor: pointer;
 }
 
+.download-sound {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
 /* Modal */
 .modal {
   width: 80% !important;
