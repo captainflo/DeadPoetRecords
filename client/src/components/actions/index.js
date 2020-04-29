@@ -163,3 +163,14 @@ export const deleteImage = (image) => async () => {
 export const deleteAudio = (audio) => async () => {
   await axios.post(`/api/delete/audio`, audio);
 };
+
+////////////////////////////////////////// Stripe /////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+export const handleToken = (token, form, callback) => async () => {
+  const body = {
+    form: form,
+    token: token,
+  };
+  await axios.post(`/api/stripe`, body);
+  callback();
+};

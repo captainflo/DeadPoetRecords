@@ -16,6 +16,7 @@ import UserShow from './user/UserShow';
 import UserEdit from './user/UserEdit';
 import Music from './pages/Music';
 import RegisterMusic from './pages/RegisterMusic';
+import ModalAgreement from './utils/ModalAgreement';
 
 class App extends React.Component {
   state = {
@@ -74,6 +75,10 @@ class App extends React.Component {
     instance.close();
   };
 
+  paymentSucces = () => {
+    this.setState({ quantity: 0, total: 0, music: [] });
+  };
+
   render() {
     return (
       <div>
@@ -85,6 +90,10 @@ class App extends React.Component {
             deleteItem={this.deleteItem}
             closeSidebar={this.closeSidebar}
             closeSidebarEcom={this.closeSidebarEcom}
+          />
+          <ModalAgreement
+            total={this.state.total}
+            paymentSucces={this.paymentSucces}
           />
           <Route exact path="/" component={Welcome} />
           <Route exact path="/signout" component={Signout} />

@@ -41,7 +41,18 @@ class Header extends React.Component {
     } else {
       return (
         <div>
-          <Link to="/signin">login</Link>
+          <li>
+            <Link to="/music/list/All">Music</Link>
+          </li>
+          <li>
+            <p data-target="slide-ecom" className="sidenav-trigger" to={''}>
+              {this.props.quantity >= 1 && this.props.quantity}
+              <i className="fas fa-shopping-cart"></i>
+            </p>
+          </li>
+          <li>
+            <Link to="/signin">login</Link>
+          </li>
         </div>
       );
     }

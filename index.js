@@ -29,7 +29,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/cloudinaryRoutes')(app);
 require('./routes/musicRoutes')(app);
-
+require('./routes/billingRoutes')(app);
 // Connect Mongo Atlas
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,

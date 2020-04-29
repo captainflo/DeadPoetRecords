@@ -240,6 +240,21 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
   padding: 16px;
   width: 100%;
 }
+
+/* Payment */
+.btn-payment {
+  display: block;
+  background-color: #630503;
+  border-radius: 2px;
+  border: none;
+  color: #fff;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
   /* Signin Signup */
   .box-input-signin {

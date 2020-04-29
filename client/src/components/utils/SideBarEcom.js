@@ -5,10 +5,10 @@ class SidebarEcom extends React.Component {
   renderMusic = () => {
     return this.props.music.map((music, idx) => {
       return (
-        <div key={idx} class="card-product hoverable">
+        <div key={idx} className="card-product hoverable">
           <img src={music.audio.cover} alt="cover" />
 
-          <div class="card-product-infos">
+          <div className="card-product-infos">
             <div
               className="trash right hoverable"
               onClick={() => this.props.deleteItem(idx, music.price)}
@@ -41,7 +41,17 @@ class SidebarEcom extends React.Component {
           <p>
             Total <span>${this.props.total}</span>
           </p>
-          <button>Check Out Now</button>
+          {this.props.quantity === 0 ? (
+            ''
+          ) : (
+            <a
+              onClick={() => this.props.closeSidebarEcom()}
+              className="modal-trigger  hoverable"
+              href="#modalPayment"
+            >
+              <button>Check Out Now</button>
+            </a>
+          )}
         </div>
         <div className="box-render-audio">{this.renderMusic()}</div>
       </ul>
