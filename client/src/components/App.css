@@ -1,3 +1,9 @@
+/* Font */
+@font-face {
+  font-family: myFirstFont;
+  src: url(../fonts/AndreaBellarosa.ttf) format('truetype');
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: #232526; /* fallback for old browsers */
