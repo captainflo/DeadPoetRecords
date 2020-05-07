@@ -16,7 +16,7 @@ class Header extends React.Component {
             <Link to="/register/music">Add Music</Link>
           </li>
           <li>
-            <Link to="/music/list/All">Music</Link>
+            <Link to="/music/list/All">Beats</Link>
           </li>
           <li>
             <p data-target="slide-ecom" className="sidenav-trigger" to={''}>
@@ -42,7 +42,10 @@ class Header extends React.Component {
       return (
         <div>
           <li>
-            <Link to="/music/list/All">Music</Link>
+            <Link to="/music/list/All">Beats</Link>
+          </li>
+          <li>
+            <Link to="/music/list/All">Contact</Link>
           </li>
           <li>
             <p data-target="slide-ecom" className="sidenav-trigger" to={''}>
@@ -72,7 +75,7 @@ class Header extends React.Component {
                   }
                   alt="logo"
                 />
-                Dead Poet Records
+                Deadpoet Records
               </span>
             </Link>
             <a href="#/" data-target="slide-out" className="sidenav-trigger">

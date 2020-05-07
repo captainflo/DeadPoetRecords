@@ -6,7 +6,7 @@ class CarouselWelcome extends Component {
   componentDidMount() {
     const options = {
       duration: 300,
-      numVisible: 14,
+      numVisible: 5,
     };
     M.Carousel.init(this.Carousel, options);
   }
@@ -26,6 +26,7 @@ class CarouselWelcome extends Component {
   render() {
     return (
       <div className="section">
+        <h2 className="center">New Releases</h2>
         <div
           ref={(Carousel) => {
             this.Carousel = Carousel;

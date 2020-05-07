@@ -2,10 +2,11 @@ import React from 'react';
 import '../css/Welcome.css';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import FormSearch from '../utils/FormSearch';
 import CarouselWelcome from '../utils/CarouselWelcome';
 import SoundBar from '../utils/SoundBar';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import ScrollAnimation from 'react-animate-on-scroll';
+import { Link } from 'react-router-dom';
 class Welcome extends React.Component {
   state = {
     audio: [],
@@ -32,14 +33,22 @@ class Welcome extends React.Component {
                   process.env.PUBLIC_URL + '/images/DeadPoetRecords-logo.png'
                 }
               />
-              <FormSearch />
             </div>
+          </div>
+          <div className="block-beats">
+            <h2 className="center">Browse Luxury Catalogue</h2>
+            <ScrollAnimation className="btn-beats center" animateIn="heartBeat">
+              <Link style={{ color: 'black' }} to={'/music/list/All'}>
+                Beats
+              </Link>
+            </ScrollAnimation>
             <h2 className="title-font center">
               Live Free, Travel the World, Create Art
             </h2>
+            <h2 className="title-font center">-Deadpoet Records</h2>
           </div>
         </div>
-
+        <hr></hr>
         {this.props.music ? (
           <CarouselWelcome music={this.props.music} play={this.play} />
         ) : (

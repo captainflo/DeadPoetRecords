@@ -1,10 +1,23 @@
-.box-welcome {
-  height: 400px;
-}
-
 .title-font {
   font-family: myFirstFont;
-  padding-top: 40px;
+  /* padding-top: 40px; */
+}
+.block-beats {
+  padding: 20px;
+}
+
+.block-beats h2 {
+  margin-bottom: 40px;
+}
+.btn-beats {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  color: black !important;
+  margin-bottom: 90px;
 }
 .banner-welcome {
   background-image: url('/images/back.jpeg');

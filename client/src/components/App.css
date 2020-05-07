@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lora', serif;
+  font-weight: 200;
   background: #232526; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
