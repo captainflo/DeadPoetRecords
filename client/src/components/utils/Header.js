@@ -45,7 +45,7 @@ class Header extends React.Component {
             <Link to="/music/list/All">Beats</Link>
           </li>
           <li>
-            <Link to="/music/list/All">Contact</Link>
+            <a href="mailto:webmaster@example.com">Contact</a>
           </li>
           <li>
             <p data-target="slide-ecom" className="sidenav-trigger" to={''}>

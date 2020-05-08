@@ -4,7 +4,6 @@ import * as actions from '../actions';
 import '../css/Music.css';
 import SoundBar from '../utils/SoundBar';
 import ListMusic from '../utils/ListMusic';
-import FronSearch from '../utils/FormSearch';
 
 class Music extends React.Component {
   state = {
@@ -22,10 +21,7 @@ class Music extends React.Component {
   render() {
     return (
       <div>
-        <div className="box-search-form">
-          {/* <h4>List Music</h4> */}
-          {/* <FronSearch /> */}
-        </div>
+        <div className="box-search-form"></div>
         {this.props.sounds.length !== 0 ? (
           <div className="box-list-music">
             <ListMusic

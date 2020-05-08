@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import CarouselWelcome from '../utils/CarouselWelcome';
 import SoundBar from '../utils/SoundBar';
-import M from 'materialize-css/dist/js/materialize.min.js';
-import ScrollAnimation from 'react-animate-on-scroll';
 import { Link } from 'react-router-dom';
 class Welcome extends React.Component {
   state = {
@@ -13,8 +11,6 @@ class Welcome extends React.Component {
   };
   componentDidMount() {
     this.props.getAllMusic();
-    const elems = document.querySelectorAll('.parallax');
-    M.Parallax.init(elems, { height: '200px' });
   }
 
   play = (music) => {
@@ -29,6 +25,7 @@ class Welcome extends React.Component {
             <div className="box-form-search-welcome">
               <img
                 className="logo-brand"
+                alt="back"
                 src={
                   process.env.PUBLIC_URL + '/images/DeadPoetRecords-logo.png'
                 }
@@ -37,11 +34,13 @@ class Welcome extends React.Component {
           </div>
           <div className="block-beats">
             <h2 className="center">Browse Luxury Catalogue</h2>
-            <ScrollAnimation className="btn-beats center" animateIn="heartBeat">
-              <Link style={{ color: 'black' }} to={'/music/list/All'}>
-                Beats
-              </Link>
-            </ScrollAnimation>
+            <Link
+              className="center btn-ghost"
+              style={{ color: '#fff' }}
+              to={'/music/list/All'}
+            >
+              Beats
+            </Link>
             <h2 className="title-font center">
               Live Free, Travel the World, Create Art
             </h2>
@@ -53,16 +52,16 @@ class Welcome extends React.Component {
           <CarouselWelcome music={this.props.music} play={this.play} />
         ) : (
           <div style={{ marginTop: '20px' }} className="center">
-            <div class="preloader-wrapper big active">
-              <div class="spinner-layer spinner-red-only">
-                <div class="circle-clipper left">
-                  <div class="circle"></div>
+            <div className="preloader-wrapper big active">
+              <div className="spinner-layer spinner-red-only">
+                <div className="circle-clipper left">
+                  <div className="circle"></div>
                 </div>
-                <div class="gap-patch">
-                  <div class="circle"></div>
+                <div className="gap-patch">
+                  <div className="circle"></div>
                 </div>
-                <div class="circle-clipper right">
-                  <div class="circle"></div>
+                <div className="circle-clipper right">
+                  <div className="circle"></div>
                 </div>
               </div>
             </div>
