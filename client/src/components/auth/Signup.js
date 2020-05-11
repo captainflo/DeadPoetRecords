@@ -89,7 +89,8 @@ class Signup extends React.Component {
               </li>
             </ul>
             <Link className="link-auth" to="/signin">
-              You have a Account? Sign In!
+              You have a Account?{' '}
+              <span style={{ textShadow: '2px 2px black;' }}>Sign In!</span>
             </Link>
             <br></br>
             <br></br>

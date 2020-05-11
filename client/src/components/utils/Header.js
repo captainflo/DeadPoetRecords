@@ -69,7 +69,7 @@ class Header extends React.Component {
             <Link className="brand-logo" to="/">
               <span className="title-logo">
                 <img
-                  className="logo-img"
+                  className="logo-img hide-on-small-only"
                   src={
                     process.env.PUBLIC_URL + '/images/DeadPoetRecords-logo.png'
                   }

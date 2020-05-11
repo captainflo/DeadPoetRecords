@@ -47,8 +47,8 @@ class Welcome extends React.Component {
             <h2 className="title-font center">-Deadpoet Records</h2>
           </div>
         </div>
-        <hr></hr>
-        {this.props.music ? (
+        {/* <hr></hr> */}
+        {/* {this.props.music ? (
           <CarouselWelcome music={this.props.music} play={this.play} />
         ) : (
           <div style={{ marginTop: '20px' }} className="center">
@@ -71,7 +71,7 @@ class Welcome extends React.Component {
           <SoundBar audio={this.state.audio} />
         ) : (
           ''
-        )}
+        )} */}
       </div>
     );
   }

@@ -3,6 +3,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import Payments from './Payments';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import { Link } from 'react-router-dom';
 
 class ModalAgreement extends React.Component {
   state = {
@@ -37,17 +38,26 @@ class ModalAgreement extends React.Component {
                   paymentSucces={this.props.paymentSucces}
                 />
               ) : (
-                <div
-                  style={{ margin: '10px' }}
-                  onClick={() => this.agree()}
-                  className="btn right"
-                >
-                  I Agree
+                <div className="center">
+                  <div
+                    style={{ margin: '10px' }}
+                    onClick={() => this.agree()}
+                    className="btn"
+                  >
+                    I Agree
+                  </div>
                 </div>
               )}
             </div>
           ) : (
-            <div>You must Log in before Checkout</div>
+            <div className="center">
+              <h5>You must Log in before Checkout</h5>
+              <br></br>
+              <br></br>
+              <Link to="/signin" className="btn-signin-cart modal-close">
+                Login
+              </Link>
+            </div>
           )}
         </div>
       </div>

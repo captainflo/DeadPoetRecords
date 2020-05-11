@@ -65,6 +65,18 @@ nav {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.img-ico {
+  font-size: 50px;
+  background-color: black;
+  color: #fff;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 8px;
+}
+
 /* Signin & Signup */
 .box-input-signin {
   display: block;
@@ -260,6 +272,15 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
   margin-right: auto;
   padding: 10px;
   cursor: pointer;
+}
+
+.btn-signin-cart {
+  background-color: #630503;
+  border-radius: 2px;
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 600px) {

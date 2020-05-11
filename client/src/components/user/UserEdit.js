@@ -99,10 +99,9 @@ class UserEdit extends React.Component {
                     name="description"
                     type="text"
                     component={renderField}
-                    label="Description"
+                    label="Record Label"
                     icon="description"
                   />
-                  <span className="asterick right">10 characters Min</span>
                 </div>
               </div>
               <div className="col m6 s12">

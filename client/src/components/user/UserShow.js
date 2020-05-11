@@ -65,8 +65,9 @@ class UserShow extends React.Component {
 }
 
 function mapStateToPros(state) {
+  console.log(state);
   return {
-    authenticated: state.auth.authenticated
+    authenticated: state.auth.authenticated,
   };
 }
 
