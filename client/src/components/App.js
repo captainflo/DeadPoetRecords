@@ -106,35 +106,37 @@ class App extends React.Component {
             total={this.state.total}
             paymentSucces={this.paymentSucces}
           />
-          <Route exact path="/" component={Welcome} />
-          <Route exact path="/signout" component={Signout} />
-          <Route exact path="/signin" component={Signin} />
-          <Route exact path="/signup" component={Signup} />
-          <Route
-            exact
-            path="/music/list/:id"
-            render={(props) => <Music {...props} addItem={this.addItem} />}
-          />
-          {this.props.authenticated ? (
-            <div>
-              <Route exact path="/user/:id" component={UserShow} />
-              <Route exact path="/user/edit/:id" component={UserEdit} />
-              <Route exact path="/register/music" component={RegisterMusic} />
-              <Route
-                exact
-                path="/succes/payment"
-                render={(props) => (
-                  <SucessPayment
-                    {...props}
-                    music={this.state.music}
-                    payment={this.state.payment}
-                  />
-                )}
-              />
-            </div>
-          ) : (
-            ''
-          )}
+          <div className="wrapper-container">
+            <Route exact path="/" component={Welcome} />
+            <Route exact path="/signout" component={Signout} />
+            <Route exact path="/signin" component={Signin} />
+            <Route exact path="/signup" component={Signup} />
+            <Route
+              exact
+              path="/music/list/:id"
+              render={(props) => <Music {...props} addItem={this.addItem} />}
+            />
+            {this.props.authenticated ? (
+              <div>
+                <Route exact path="/user/:id" component={UserShow} />
+                <Route exact path="/user/edit/:id" component={UserEdit} />
+                <Route exact path="/register/music" component={RegisterMusic} />
+                <Route
+                  exact
+                  path="/succes/payment"
+                  render={(props) => (
+                    <SucessPayment
+                      {...props}
+                      music={this.state.music}
+                      payment={this.state.payment}
+                    />
+                  )}
+                />
+              </div>
+            ) : (
+              ''
+            )}
+          </div>
           <Footer />
         </BrowserRouter>
       </div>

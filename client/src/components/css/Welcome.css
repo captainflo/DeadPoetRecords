@@ -8,6 +8,7 @@
 
 .block-beats h2 {
   margin-bottom: 40px;
+  font-size: 40px;
 }
 .btn-beats {
   background-color: #fff;
@@ -103,5 +104,9 @@
     display: table;
     margin-left: auto;
     margin-right: auto;
+  }
+  .block-beats h2 {
+    font-size: 30px;
+    line-height: 1.9;
   }
 }

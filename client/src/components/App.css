@@ -48,9 +48,13 @@ nav {
 .sidebar-background {
   width: 320px;
 }
+.wrapper-container {
+  min-height: 100vh;
+}
 
 /* Footer */
 .page-footer {
+  border: 1px solid black;
   border-top: 1px solid #fff;
   background: #232526; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -303,5 +307,15 @@ input[type='tel']:not(.browser-default):focus:not([readonly]) {
   }
   .sidenavEcom {
     width: 300px !important;
+  }
+
+  .img-ico {
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8px;
   }
 }
